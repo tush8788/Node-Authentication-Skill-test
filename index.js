@@ -1,8 +1,18 @@
 const express=require('express');
+const expressLayout=require('express-ejs-layouts');
 const port=8000;
 
 const app=express();
 
+//set up ejs
+app.set('view engine','ejs');
+app.set('views','./views');
+
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
+
+app.use(expressLayout);
+app.use(express.static('./assets'));
 //handle routers
 app.use('/',require('./routes/index'));
 

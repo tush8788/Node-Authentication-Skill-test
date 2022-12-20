@@ -1,3 +1,11 @@
-module.exports.home=function(req,res){
-    res.end("<h1>home</h1>")
+module.exports.signInPage=function(req,res){
+    return res.render('signIn',{
+        title:"Sign-in"
+    })
+}
+
+module.exports.signUpPage=function(req,res){
+    return res.render('signUp',{
+        title:'Sign Up'
+    })
 }
