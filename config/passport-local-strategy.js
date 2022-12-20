@@ -2,13 +2,16 @@ const passport=require('passport');
 const LocalStrategy=require('passport-local').Strategy;
 const UserDB=require('../model/user');
 
-passport.use(new LocalStrategy({usernameField:'email'},function(email,password,done){
-    UserDB.findOne({email:email},function(err,user){
+passport.use(new LocalStrategy({usernameField:'email',passReqToCallback:true},function(req,email,password,done){
+    UserDB.findOne({email:email},function(err,user)
+    {
         if(err){
+            req.flash('error',"error in passport auth");
             console.log("error in passport auth ",err);
             return done(err);
         }
         if(!user || user.password != password){
+            req.flash('error',"Invaild email / password");
             console.log("Invaild email / password");
             return done(null,false);
         }

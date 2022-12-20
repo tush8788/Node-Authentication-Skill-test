@@ -1,11 +1,11 @@
-const { model } = require('mongoose');
 const UserDB=require('../model/user');
 
 //sign up
 module.exports.SignUp= async function(req,res){
     // console.log(req.body);
     if(req.body.password != req.body.ConfromPassword){
-        console.log('password and Conform Password not match');
+        req.flash('error','password and Conform Password not match');
+        console.log('');
         return res.redirect('back');
     }
 
@@ -13,16 +13,17 @@ module.exports.SignUp= async function(req,res){
 
     if(!user){
         await UserDB.create(req.body);
+        req.flash('success','signup successfully');
         return res.redirect('/');
     }
-
-    console.log("user Already Ragister");
+    req.flash('error','user Already Ragister');
     return res.redirect('/');
 
 }
 
 //sign in
 module.exports.signIn= function(req,res){
+    req.flash('success','signin successfully');
     return res.redirect('/user/profile');
 }
 
@@ -36,5 +37,6 @@ module.exports.profile=function(req,res){
 //sign out
 module.exports.signOut=function(req,res){
     req.logout(function(err){if(err){console.log(err)}});
+    req.flash('success','signout successfully');
     res.redirect('/');
 }

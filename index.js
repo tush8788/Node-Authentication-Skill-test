@@ -6,6 +6,8 @@ const db=require('./config/mongoose');
 const expressSession=require('express-session');
 const passport=require('passport');
 const LocalStrategy=require('./config/passport-local-strategy');
+const flash=require('connect-flash');
+const customMware=require('./config/Noty_middelware');
 
 const app=express();
 
@@ -32,6 +34,9 @@ app.use(expressSession({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(flash());
+app.use(customMware.setFlash);
 
 //handle routers
 app.use('/',require('./routes/index'));
