@@ -1,4 +1,6 @@
 const UserDB=require('../model/user');
+//encript password
+const bcript=require('bcrypt');
 
 //sign up
 module.exports.SignUp= async function(req,res){
@@ -12,8 +14,11 @@ module.exports.SignUp= async function(req,res){
     let user= await UserDB.findOne({email:req.body.email});
 
     if(!user){
+
+        //encript password here
+        req.body.password= await bcript.hash(req.body.password,10);
         await UserDB.create(req.body);
-        req.flash('success','signup successfully');
+        req.flash('success','user created successfully');
         return res.redirect('/');
     }
     req.flash('error','user Already Ragister');

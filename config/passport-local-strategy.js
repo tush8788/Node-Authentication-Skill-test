@@ -1,16 +1,19 @@
 const passport=require('passport');
 const LocalStrategy=require('passport-local').Strategy;
 const UserDB=require('../model/user');
+const bcript=require('bcrypt');
 
 passport.use(new LocalStrategy({usernameField:'email',passReqToCallback:true},function(req,email,password,done){
-    UserDB.findOne({email:email},function(err,user)
+    UserDB.findOne({email:email},async function(err,user)
     {
         if(err){
             req.flash('error',"error in passport auth");
             console.log("error in passport auth ",err);
             return done(err);
         }
-        if(!user || user.password != password){
+        // if(!user || user.password != password)
+        // console.log(!bcript.compare(password, user.password));
+        if(!user || ! await bcript.compare(password, user.password) ){
             req.flash('error',"Invaild email / password");
             console.log("Invaild email / password");
             return done(null,false);
