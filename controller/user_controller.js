@@ -1,6 +1,7 @@
-const { userInfo } = require('os');
+const { model } = require('mongoose');
 const UserDB=require('../model/user');
 
+//sign up
 module.exports.SignUp= async function(req,res){
     // console.log(req.body);
     if(req.body.password != req.body.ConfromPassword){
@@ -15,7 +16,25 @@ module.exports.SignUp= async function(req,res){
         return res.redirect('/');
     }
 
-    console.log("user Already Ragiter");
+    console.log("user Already Ragister");
     return res.redirect('/');
 
+}
+
+//sign in
+module.exports.signIn= function(req,res){
+    return res.redirect('/user/profile');
+}
+
+//profile
+module.exports.profile=function(req,res){
+    return res.render('profile',{
+        title:"profile"
+    })
+}
+
+//sign out
+module.exports.signOut=function(req,res){
+    req.logout(function(err){if(err){console.log(err)}});
+    res.redirect('/');
 }

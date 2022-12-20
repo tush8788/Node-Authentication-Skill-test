@@ -3,6 +3,9 @@ const expressLayout=require('express-ejs-layouts');
 const bodyParser=require('body-parser');
 const port=8000;
 const db=require('./config/mongoose');
+const expressSession=require('express-session');
+const passport=require('passport');
+const LocalStrategy=require('./config/passport-local-strategy');
 
 const app=express();
 
@@ -16,6 +19,20 @@ app.set('layout extractScripts',true);
 app.use(expressLayout);
 app.use(express.static('./assets'));
 app.use(bodyParser.urlencoded({extended:false}));
+
+app.use(expressSession({
+    name:"user_id",
+    secret:"anyValue",
+    saveUninitialized:false,
+    resave:false,
+    cookie:{
+        maxAge:(10000*60*100)
+    }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 //handle routers
 app.use('/',require('./routes/index'));
 
