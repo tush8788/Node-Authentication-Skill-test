@@ -11,5 +11,17 @@ router.post('/sign-in',passport.authenticate('local',{failureRedirect:'/'}),user
 router.get('/profile',passport.checkAuthentication,userController.profile);
 
 //sign out
-router.get('/sign-out',userController.signOut)
+router.get('/sign-out',userController.signOut);
+
+//google authentication
+router.get('/auth/google',passport.authenticate(
+    'google',
+    {scope:['profile','email']}
+));
+
+router.get('/auth/google/callback',passport.authenticate(
+    'google',
+    {failureRedirect:'/'}
+),userController.signIn)
+
 module.exports=router;

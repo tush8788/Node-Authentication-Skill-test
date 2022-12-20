@@ -6,6 +6,7 @@ const db=require('./config/mongoose');
 const expressSession=require('express-session');
 const passport=require('passport');
 const LocalStrategy=require('./config/passport-local-strategy');
+const googleStrategy=require('./config/passport-google-oauth2-strategy');
 const flash=require('connect-flash');
 const customMware=require('./config/Noty_middelware');
 const MongoStore=require('connect-mongo');
