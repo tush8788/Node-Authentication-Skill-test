@@ -8,6 +8,7 @@ const passport=require('passport');
 const LocalStrategy=require('./config/passport-local-strategy');
 const flash=require('connect-flash');
 const customMware=require('./config/Noty_middelware');
+const MongoStore=require('connect-mongo');
 
 const app=express();
 
@@ -29,7 +30,14 @@ app.use(expressSession({
     resave:false,
     cookie:{
         maxAge:(10000*60*100)
-    }
+    },
+    store:MongoStore.create({
+        mongoUrl:'mongodb://localhost/Authentication-Skill-test',
+        autoRemove:'disabled'
+    },
+    function(err){
+        console.log(err|| "Connect-mongo setup ok");
+    })
 }));
 
 app.use(passport.initialize());
