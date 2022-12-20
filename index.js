@@ -1,5 +1,6 @@
 const express=require('express');
 const expressLayout=require('express-ejs-layouts');
+const bodyParser=require('body-parser');
 const port=8000;
 const db=require('./config/mongoose');
 
@@ -14,6 +15,7 @@ app.set('layout extractScripts',true);
 
 app.use(expressLayout);
 app.use(express.static('./assets'));
+app.use(bodyParser.urlencoded({extended:false}));
 //handle routers
 app.use('/',require('./routes/index'));
 
