@@ -1,7 +1,6 @@
 const express=require('express');
 const expressLayout=require('express-ejs-layouts');
 const bodyParser=require('body-parser');
-const port=8000;
 const db=require('./config/mongoose');
 const expressSession=require('express-session');
 const passport=require('passport');
@@ -11,6 +10,8 @@ const flash=require('connect-flash');
 const customMware=require('./config/Noty_middelware');
 const MongoStore=require('connect-mongo');
 
+const dotenv=require('dotenv').config();
+const port=process.env.PORT;
 const app=express();
 
 //set up ejs
