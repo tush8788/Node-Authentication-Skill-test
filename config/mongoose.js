@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const dotenv=require('dotenv').config();
 mongoose.set('strictQuery', false);
 // ||'mongodb://localhost/Authentication-Skill-test'
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/Authentication-Skill-test');
 
 const db = mongoose.connection;
 
