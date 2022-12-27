@@ -59,7 +59,7 @@ Creating a complete authentication system which can be used as a starter code fo
 
 3. Continue with Google
 
-![plot](./screenshort/continue with google.png)
+![plot](./screenshort/googleSignInandup.png)
 
 4. Profile page
 
