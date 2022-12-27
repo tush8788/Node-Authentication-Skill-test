@@ -37,7 +37,7 @@ app.use(expressSession({
     },
     //for mongostore
     store:MongoStore.create({
-        mongoUrl:'mongodb://localhost/Authentication-Skill-test',
+        mongoUrl:process.env.MONGO_URL||'mongodb://localhost/Authentication-Skill-test',
         autoRemove:'disabled'
     },
     function(err){
