@@ -44,7 +44,27 @@ Creating a complete authentication system which can be used as a starter code fo
 6. then just "npm start"/ if npm start is not work just run this command 'node index.js'
 7. then go localhost:8000
 
-![plot](./screenshort/signinpage.png)
-
 ## This Site is hosted on cyclic.sh
 1. Access link "https://teal-handsome-fawn.cyclic.app/"
+
+
+##Screen Short
+1. Sign In Page
+
+![plot](./screenshort/signinpage.png)
+
+2. Sign Up Page
+
+![plot](./screenshort/signuppage.png)
+
+3. Continue with Google
+
+![plot](./screenshort/continue with google.png)
+
+4. Profile page
+
+![plot](./screenshort/profilepage.png)
+
+5. Reset Password
+
+![plot](./screenshort/resetpassword.png)
