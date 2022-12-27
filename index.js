@@ -11,7 +11,7 @@ const customMware=require('./config/Noty_middelware');
 const MongoStore=require('connect-mongo');
 
 const dotenv=require('dotenv').config();
-const port=process.env.PORT;
+const port=process.env.PORT||8000;
 const app=express();
 
 //set up ejs
