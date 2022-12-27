@@ -20,10 +20,12 @@ app.set('views','./views');
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
+// middlewares 
 app.use(expressLayout);
 app.use(express.static('./assets'));
 app.use(bodyParser.urlencoded({extended:false}));
 
+//for session cookie
 app.use(expressSession({
     name:"user_id",
     secret:"anyValue",
@@ -32,6 +34,7 @@ app.use(expressSession({
     cookie:{
         maxAge:(10000*60*100)
     },
+    //for mongostore
     store:MongoStore.create({
         mongoUrl:'mongodb://localhost/Authentication-Skill-test',
         autoRemove:'disabled'
@@ -44,6 +47,9 @@ app.use(expressSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(passport.setAuthenticatedUser);
+
+//for notification
 app.use(flash());
 app.use(customMware.setFlash);
 

@@ -1,11 +1,14 @@
-const express=require('express');
-const router=express.Router();
-const homeController=require('../controller/home_controller');
+const express = require('express');
+const router = express.Router();
 
-router.get('/',homeController.signInPage);
-router.get('/signup',homeController.signUpPage);
+// import home_controller
+const homeController = require('../controller/home_controller');
+//sign in page
+router.get('/', homeController.signInPage);
+//sign up page
+router.get('/signup', homeController.signUpPage);
 
-//user
-router.use('/user',require('./user'));
+//sending req to user routes
+router.use('/user', require('./user'));
 
-module.exports=router;
+module.exports = router;

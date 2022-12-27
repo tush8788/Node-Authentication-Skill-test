@@ -46,4 +46,12 @@ passport.checkAuthentication=function(req,res,next){
     return res.redirect('/');
 }
 
+//set user in locals for views
+passport.setAuthenticatedUser=function(req,res,next){
+    if(req.isAuthenticated()){
+        res.locals.user=req.user;
+    }
+    next();
+}
+
 module.exports=passport;

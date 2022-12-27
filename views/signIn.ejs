@@ -1,9 +1,25 @@
-<h3>SIGN IN</h3>
-<form action="/user/sign-in" method="post">
-    <input type="email" name="email" placeholder="Enter Email" required><br>
-    <input type="password" name="password" id="" placeholder="Enter Password" required><br>
-    <button type="submit">Sign In</button>
-</form>
-<p>
-    <a href="/user/auth/google">Google SignIn / SignUp</a>
-</p>
+<link rel="stylesheet" href="/css/sign-in-up.css">
+<section id="form-container">
+    <div>
+        <h3>SIGN IN</h3>
+        <form action="/user/sign-in" method="post">
+            <div class="form-floating mb-3">
+                <input type="email" name="email" class="form-control input-tag" id="floatingInput"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="password" class="form-control input-tag" id="floatingPassword"
+                    placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <button type="submit" class="btn btn-danger form-btn">Sign In</button>
+        </form>
+        <div class="container gap-2 mt-3">
+            <div class="row">
+                <div class="col-6 text-center"><a class="links" href="/user/auth/google">Continue with Google</a></div>
+                <div class="col-6 text-center"><a class="links" href="#">Forgot Password</a></div>
+            </div>
+        </div>
+    </div>
+</section>

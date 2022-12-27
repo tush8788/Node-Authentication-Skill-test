@@ -22,7 +22,8 @@ passport.use(new googleStrategy({
             //if user is not found then create new 
             let newUser=await UserDB.create({
                 email:profile.emails[0].value,
-                password:crypto.randomBytes(20).toString('hex')
+                password:crypto.randomBytes(20).toString('hex'),
+                isGoogle:true
             });
             
             return done(null,newUser);
