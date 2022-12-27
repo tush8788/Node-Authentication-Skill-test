@@ -46,4 +46,4 @@ Creating a complete authentication system which can be used as a starter code fo
 
 
 ## This Site is hosted on cyclic.sh
-1. Access link "https://jolly-lamb-outfit.cyclic.app/"
+1. Access link "https://teal-handsome-fawn.cyclic.app/"
