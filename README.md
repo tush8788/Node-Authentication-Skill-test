@@ -48,27 +48,24 @@ Creating a complete authentication system which can be used as a starter code fo
 1. Access link "https://teal-handsome-fawn.cyclic.app/"
 
 
+
 ##Screen Short
-1. Register Doctor
+1. Sign In Page
 
-![plot](./screenshort/register-doctor.png)
+![plot](./screenshort/signinpage.png)
 
-2. Login Doctor
+2. Sign Up Page
 
-![plot](./screenshort/login-doctor.png)
+![plot](./screenshort/signuppage.png)
 
-3. Register Patient
+3. Continue with Google
 
-![plot](./screenshort/register-patient.png)
+![plot](./screenshort/googleSignInandup.png)
 
-4. Genrate Report useing Patient by Doctor
+4. Profile page
 
-![plot](./screenshort/genrate-report.png)
+![plot](./screenshort/profilepage.png)
 
-5. show all reports of patient
+5. Reset Password
 
-![plot](./screenshort/all-report.png)
-
-6. show all reports of status wise
-
-![plot](./screenshort/report-status-wise.png)
+![plot](./screenshort/resetpassword.png)
