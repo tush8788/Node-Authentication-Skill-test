@@ -49,22 +49,26 @@ Creating a complete authentication system which can be used as a starter code fo
 
 
 ##Screen Short
-1. Sign In Page
+1. Register Doctor
 
-![plot](./screenshort/signinpage.png)
+![plot](./screenshort/register-doctor.png)
 
-2. Sign Up Page
+2. Login Doctor
 
-![plot](./screenshort/signuppage.png)
+![plot](./screenshort/login-doctor.png)
 
-3. Continue with Google
+3. Register Patient
 
-![plot](./screenshort/googleSignInandup.png)
+![plot](./screenshort/register-patient.png)
 
-4. Profile page
+4. Genrate Report useing Patient by Doctor
 
-![plot](./screenshort/profilepage.png)
+![plot](./screenshort/genrate-report.png)
 
-5. Reset Password
+5. show all reports of patient
 
-![plot](./screenshort/resetpassword.png)
+![plot](./screenshort/all-report.png)
+
+6. show all reports of status wise
+
+![plot](./screenshort/report-status-wise.png)
