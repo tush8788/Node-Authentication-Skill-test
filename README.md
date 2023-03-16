@@ -36,13 +36,11 @@ Creating a complete authentication system which can be used as a starter code fo
 
 ##Setup in Local System
 
-1. clone the repo in your System.
-2. go to folder you want open cmd/power shell/git-bash. 
-3. then just run:- git clone https://github.com/tush8788/Node-Authentication-Skill-test.git
-4. after download done 
-5. open command prompt and Type 'npm install' for download all dependencies 
-6. then just "npm start"/ if npm start is not work just run this command 'node index.js'
-7. then go localhost:8000
+1. git clone https://github.com/tush8788/Node-Authentication-Skill-test.git
+2. open command prompt and Type 'npm install' for download all dependencies
+3. then just "npm start"/ if npm start is not work just run this command 'node index.js'
+4. then go localhost:8000
+
 
 ## This Site is hosted on cyclic.sh
 1. Access link "https://teal-handsome-fawn.cyclic.app/"
